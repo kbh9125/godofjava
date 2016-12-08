@@ -15,9 +15,11 @@ public class InterestManager {
             System.out.print("Day " + day + " " + (day % 10));
             System.out.print("caculateAmount: " + interestManager.calculateAmount(day,amount));
 
-            if (day== 1 || (day % 10) == 0) {
-                System.out.println(" " + "caculateAmount: " + interestManager.calculateAmount(day, amount));
-            } else System.out.println(" ");
+            //if (day== 1 || (day % 10) == 0) {
+            if ((day % 10) == 1) {
+                    System.out.println(" " + "caculateAmount: " + interestManager.calculateAmount(day, amount));
+                } else System.out.println(" ");
+            }
         }
 
     }
