@@ -22,8 +22,6 @@ public class InterestManager {
             }
         }
 
-    }
-
     public double getInterestRate(int day) {
         double interestRate = 0.0;
 
