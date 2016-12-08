@@ -1,4 +1,4 @@
-package godofjava;
+package godofjava; // comment
 
 public class SalaryManager {
 
