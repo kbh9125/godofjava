@@ -1,3 +1,5 @@
+package godofjava;
+
 public class ManageHeight {
 
 //int [][] gradeHeights = new int[5][] ;
