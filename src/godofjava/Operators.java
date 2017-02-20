@@ -29,7 +29,7 @@ public class Operators {
 
 	    shortValue++;
         System.out.println(shortValue);
-        // byte? ?????? ?? short?? ?? 1???? ?? ???
+        // byteë¡œ í˜•ë³€í™˜í•œë‹¤ëŠ” ê²ƒì€ shortì•ì— ìˆëŠ” 1ë°”ì´íŠ¸ë¥¼ ê·¸ëƒ¥ ë²„ë¦°ë‹¤
         byteValue = (byte) shortValue;
         System.out.println(byteValue);
     }
@@ -62,7 +62,7 @@ public class Operators {
 		
 		int result = intValue1 + intValue2 ;
 		System.out.println(result);
-		// result¿¡ ÇÒ´çµÇ¾î ÀÖ´ø ´õÇÏ±â °á°ú´Â »ç¶óÁö°í, »õ·Î¿î °á°ú°¡ result º¯¼ö¿¡ ÇÒ´ç
+		// resultÂ¿Â¡ Ã‡Ã’Â´Ã§ÂµÃ‡Â¾Ã® Ã€Ã–Â´Ã¸ Â´ÃµÃ‡ÃÂ±Ã¢ Â°Ã¡Â°ÃºÂ´Ã‚ Â»Ã§Â¶Ã³ÃÃ¶Â°Ã­, Â»ÃµÂ·ÃÂ¿Ã® Â°Ã¡Â°ÃºÂ°Â¡ result ÂºÂ¯Â¼Ã¶Â¿Â¡ Ã‡Ã’Â´Ã§
 		result = intValue2 - intValue1 ;
 		System.out.println(result);
 		
@@ -79,7 +79,7 @@ public class Operators {
 		System.out.println(result);
 		result = intValue1 / intValue2 ;
 		System.out.println(result);
-		// float Çü º¯È¯
+		// float Ã‡Ã¼ ÂºÂ¯ÃˆÂ¯
 		float result2 = (float) intValue1 / intValue2 ;
 		System.out.println(result2);
 	}
@@ -111,7 +111,7 @@ public class Operators {
 	}
 
 	private void unary() {
-		// ´ÜÇ×¿¬»êÀÚ
+		// Â´ÃœÃ‡Ã—Â¿Â¬Â»ÃªÃ€Ãš
 		System.out.println("Method unary...");
 		int intValue = -10 ;
 		int result = +intValue ;
@@ -125,18 +125,18 @@ public class Operators {
 	}
 
 	private void increDecre() {
-		// ++¿¬»êÀÚ¸¦ ¾Õ¿¡ ºÙÀÌ±â, µÚ¿¡ ºÙÀÌ±â -> °á°ú°ªÀÌ ´Ù¸£´Ù
+		// ++Â¿Â¬Â»ÃªÃ€ÃšÂ¸Â¦ Â¾Ã•Â¿Â¡ ÂºÃ™Ã€ÃŒÂ±Ã¢, ÂµÃšÂ¿Â¡ ÂºÃ™Ã€ÃŒÂ±Ã¢ -> Â°Ã¡Â°ÃºÂ°ÂªÃ€ÃŒ Â´Ã™Â¸Â£Â´Ã™
 		System.out.println("Method unary...");
 		int intValue = 1 ;
-		// °á°ú¸¦ Ãâ·ÂÇÑ ÈÄ¿¡ 1À» ´õÇÑ´Ù.
+		// Â°Ã¡Â°ÃºÂ¸Â¦ ÃƒÃ¢Â·Ã‚Ã‡Ã‘ ÃˆÃ„Â¿Â¡ 1Ã€Â» Â´ÃµÃ‡Ã‘Â´Ã™.
 		System.out.println(intValue++);
 		System.out.println(intValue);
-		// Ãâ·ÂÇÏ±â Àü¿¡ 1À» ´õÇÑ´Ù.
+		// ÃƒÃ¢Â·Ã‚Ã‡ÃÂ±Ã¢ Ã€Ã¼Â¿Â¡ 1Ã€Â» Â´ÃµÃ‡Ã‘Â´Ã™.
 		System.out.println(++intValue);
 	}
 
 	private void complement() {
-		// !¿¬»êÀÚ : boolean Å¸ÀÔ¿¡¼­¸¸ ÀÌ ¿¬»êÀÚ¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+		// !Â¿Â¬Â»ÃªÃ€Ãš : boolean Ã…Â¸Ã€Ã”Â¿Â¡Â¼Â­Â¸Â¸ Ã€ÃŒ Â¿Â¬Â»ÃªÃ€ÃšÂ¸Â¦ Â»Ã§Â¿Ã«Ã‡Ã’ Â¼Ã¶ Ã€Ã–Â´Ã™.
 		System.out.println("Method complement...");
 		boolean flag = true ;
 		System.out.println(flag);
@@ -144,7 +144,7 @@ public class Operators {
 	}
 
 	private void comparison() {
-		// == != ¿¬»êÀÚ
+		// == != Â¿Â¬Â»ÃªÃ€Ãš
 		System.out.println("Method comparison...");
 		int intValue1 = 1 ;
 		int intValue2 = 2 ;
@@ -157,13 +157,13 @@ public class Operators {
 		
 		System.out.println("--------------------");
 		
-		// ½ÇÁ¦ Å¸ÀÔÀº ´Ù¸£´Ù°í ÇÏ´õ¶óµµ, ¼ıÀÚ³¢¸® ºñ±³´Â °¡´É
+		// Â½Ã‡ÃÂ¦ Ã…Â¸Ã€Ã”Ã€Âº Â´Ã™Â¸Â£Â´Ã™Â°Ã­ Ã‡ÃÂ´ÃµÂ¶Ã³ÂµÂµ, Â¼Ã½Ã€ÃšÂ³Â¢Â¸Â® ÂºÃ±Â±Â³Â´Ã‚ Â°Â¡Â´Ã‰
 		char charValue = 'a';
 		System.out.println(97==charValue);
 		double doubleValue = 1.0 ;
 		System.out.println(intValue1==doubleValue);
 		
-		// boolean°ª³¢¸® ºñ±³ °¡´É? Å×½ºÆ®... °¡´É..
+		// booleanÂ°ÂªÂ³Â¢Â¸Â® ÂºÃ±Â±Â³ Â°Â¡Â´Ã‰? Ã…Ã—Â½ÂºÃ†Â®... Â°Â¡Â´Ã‰..
 		boolean booleanValue = true ;
 		System.out.println(true==booleanValue);
 	}
