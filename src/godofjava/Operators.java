@@ -12,10 +12,50 @@ public class Operators {
 		sample.increDecre() ;
 		sample.complement() ;
 		sample.comparison() ;
+        sample.comparison2() ;
+        sample.condition();
+        sample.doBlindDate(30);
+        sample.doBlindDate(80);
+        sample.casting();
 
 	}
 
-	private void additive() {
+    private void casting() {
+        System.out.println("Method casting...");
+	    byte byteValue = 127 ;
+	    short shortValue = byteValue ;
+        System.out.println(byteValue);
+        System.out.println(shortValue);
+
+	    shortValue++;
+        System.out.println(shortValue);
+        // byte? ?????? ?? short?? ?? 1???? ?? ???
+        byteValue = (byte) shortValue;
+        System.out.println(byteValue);
+    }
+
+    private boolean doBlindDate(int point) {
+        System.out.println("Method doBlindDate...");
+	    boolean doBlindDateFlag = false ;
+	    doBlindDateFlag = (point>=80) ? true : false ;
+	    System.out.println(point + " : " + doBlindDateFlag);
+	    return  doBlindDateFlag;
+    }
+
+    private void condition() {
+        System.out.println("Method condition...");
+	    boolean x = true ;
+	    boolean y = true ;
+	    System.out.println(x && y);
+        System.out.println(x || y);
+        System.out.println("--------");
+        x = false;
+        System.out.println(x && y);
+        System.out.println(x || y);
+        System.out.println("--------");
+    }
+
+    private void additive() {
 		System.out.println("Method additive...");
 		int intValue1 = 5 ;
 		int intValue2 = 10 ;
@@ -127,5 +167,16 @@ public class Operators {
 		boolean booleanValue = true ;
 		System.out.println(true==booleanValue);
 	}
-	
+
+    private void comparison2() {
+        System.out.println("Method comparison2...");
+        int intValue1 = 1 ;
+        int intValue2 = 2 ;
+        System.out.println(intValue1 > intValue2) ;
+        System.out.println(intValue1 < intValue2) ;
+
+        System.out.println(intValue1 >= intValue2) ;
+        System.out.println(intValue1 <= intValue2) ;
+    }
+
 }
