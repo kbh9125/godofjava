@@ -24,6 +24,60 @@ public class ReferenceTypes {
         System.out.println("Method checkMemberDTOName....");
         reference.checkMemberDTOName();
 
+        System.out.println("Method callPassByValue....");
+        reference.callPassByValue();
+
+        System.out.println("Method calculateNumbers....");
+        reference.calculateNumbers(1,2,3,4,5);
+
+        System.out.println("Method arbitrary....");
+        reference.arbitrary("aaa",1,2,3);
+
+    }
+
+    // 매개변수를 지정하는 특이한 방법
+    // private void calculateNumbers(int [] numbers) {
+    private void calculateNumbers(int ... numbers) {
+        int total = 0;
+        for(int number:numbers) {
+            total += number;
+        }
+        System.out.println("Total="+total);
+    }
+
+    // ... 는 가장 마지막에 선언해야 한다
+    private void arbitrary(String message, int ... numbers) {
+
+    }
+
+    private void callPassByValue() {
+        int a = 10;
+        String b = "b";
+        MemberDTO member = new MemberDTO("Sanmain");
+        passByValue(a,b,member);
+        System.out.println("callPassByValue method result !!!");
+        System.out.println("a="+a);
+        System.out.println("b="+b);
+        System.out.println("member.name="+member.name);
+    }
+
+    private void passByValue(int a, String b, MemberDTO member) {
+        // 기본자료형은 무조건 Pass by vlaue
+        a=20;
+        b="z";
+
+        String c="c";
+        // String c = new String("c"); 과 동일
+        c="z";
+        // c = new String("z"); 과 동일
+
+        //member = new MemberDTO("SungChoon");
+        // 참조자료형의 Pass by value
+        member.name = "BangHyun";
+        System.out.println("PassByValue method result !!!");
+        System.out.println("a="+a);
+        System.out.println("b="+b);
+        System.out.println("member.name="+member.name);
     }
 
     public void checkMemberDTOName() {
