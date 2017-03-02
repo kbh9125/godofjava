@@ -7,6 +7,7 @@ package godofjava;
  */
 public class MemberDTO {
     public static String name ;
+    private String privateName ;
     public String phone ;
     public String email ;
 
@@ -17,7 +18,7 @@ public class MemberDTO {
     }
 
     // 이름만 알 때
-    public MemberDTO(String name) {
+    public MemberDTO(String privateName) {
         // this : 이 객체
         this.name = name ;
     }
@@ -44,6 +45,10 @@ public class MemberDTO {
         System.out.println("This is a static method.");
         // static 메소드는 static 변수만을 사용할 수 있다... name은 인스턴스 변수..
         // System.out.println(name);
+    }
+
+    public String getName() {
+        return privateName;
     }
 
 }
