@@ -32,6 +32,9 @@ public class ReferenceTypes {
 
         System.out.println("Method arbitrary....");
         reference.arbitrary("aaa",1,2,3);
+        
+        System.out.println("Method makeStaticBlockObject....");
+        reference.makeStaticBlockObject();
 
     }
 
@@ -80,12 +83,23 @@ public class ReferenceTypes {
         System.out.println("member.name="+member.name);
     }
 
-    public void checkMemberDTOName() {
+    private void makeStaticBlockObject() {
+    	System.out.println("Creating block1");
+    	StaticBlock block1 = new StaticBlock();
+    	System.out.println("Created block1");
+    	System.out.println("Creating block2");
+    	StaticBlock block2 = new StaticBlock();
+    	System.out.println("Created block2");
+
+	}
+	public void checkMemberDTOName() {
+		System.out.println("data="+StaticBlock.getData());
         MemberDTO dto1 = new MemberDTO("BangHyun");
         System.out.println(dto1.name);
         MemberDTO dto2 = new MemberDTO("Sungchoon");
         // name 변수를 static으로 선언하였다.. dto2객체를 생성하고 name을 초기화 할때 Sungchoon으로 바뀐다
         System.out.println(dto1.name);
+		System.out.println("data="+StaticBlock.getData());
     }
 
     public void makeMemberObject() {

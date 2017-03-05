@@ -50,5 +50,4 @@ public class MemberDTO {
     public String getName() {
         return privateName;
     }
-
 }
