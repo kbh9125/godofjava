@@ -24,14 +24,82 @@ public class ReferenceTypes {
         System.out.println("Method checkMemberDTOName....");
         reference.checkMemberDTOName();
 
+        System.out.println("Method callPassByValue....");
+        reference.callPassByValue();
+
+        System.out.println("Method calculateNumbers....");
+        reference.calculateNumbers(1,2,3,4,5);
+
+        System.out.println("Method arbitrary....");
+        reference.arbitrary("aaa",1,2,3);
+        
+        System.out.println("Method makeStaticBlockObject....");
+        reference.makeStaticBlockObject();
+
+    }
+    
+    // 매개변수를 지정하는 특이한 방법
+    // private void calculateNumbers(int [] numbers) {
+    private void calculateNumbers(int ... numbers) {
+        int total = 0;
+        for(int number:numbers) {
+            total += number;
+        }
+        System.out.println("Total="+total);
     }
 
-    public void checkMemberDTOName() {
+    // ... 는 가장 마지막에 선언해야 한다
+    private void arbitrary(String message, int ... numbers) {
+
+    }
+
+    private void callPassByValue() {
+        int a = 10;
+        String b = "b";
+        MemberDTO member = new MemberDTO("Sanmain");
+        passByValue(a,b,member);
+        System.out.println("callPassByValue method result !!!");
+        System.out.println("a="+a);
+        System.out.println("b="+b);
+        System.out.println("member.name="+member.name);
+    }
+
+    private void passByValue(int a, String b, MemberDTO member) {
+        // 기본자료형은 무조건 Pass by vlaue
+        a=20;
+        b="z";
+
+        String c="c";
+        // String c = new String("c"); 과 동일
+        c="z";
+        // c = new String("z"); 과 동일
+
+        //member = new MemberDTO("SungChoon");
+        // 참조자료형의 Pass by value
+        member.name = "BangHyun";
+        System.out.println("PassByValue method result !!!");
+        System.out.println("a="+a);
+        System.out.println("b="+b);
+        System.out.println("member.name="+member.name);
+    }
+
+    private void makeStaticBlockObject() {
+    	System.out.println("Creating block1");
+    	StaticBlock block1 = new StaticBlock();
+    	System.out.println("Created block1");
+    	System.out.println("Creating block2");
+    	StaticBlock block2 = new StaticBlock();
+    	System.out.println("Created block2");
+
+	}
+	public void checkMemberDTOName() {
+		System.out.println("data="+StaticBlock.getData());
         MemberDTO dto1 = new MemberDTO("BangHyun");
         System.out.println(dto1.name);
         MemberDTO dto2 = new MemberDTO("Sungchoon");
         // name 변수를 static으로 선언하였다.. dto2객체를 생성하고 name을 초기화 할때 Sungchoon으로 바뀐다
         System.out.println(dto1.name);
+		System.out.println("data="+StaticBlock.getData());
     }
 
     public void makeMemberObject() {
