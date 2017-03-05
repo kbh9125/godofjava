@@ -83,41 +83,6 @@ public class ReferenceTypes {
         System.out.println("member.name="+member.name);
     }
 
-    // ... 는 가장 마지막에 선언해야 한다
-    private void arbitrary(String message, int ... numbers) {
-
-    }
-
-    private void callPassByValue() {
-        int a = 10;
-        String b = "b";
-        MemberDTO member = new MemberDTO("Sanmain");
-        passByValue(a,b,member);
-        System.out.println("callPassByValue method result !!!");
-        System.out.println("a="+a);
-        System.out.println("b="+b);
-        System.out.println("member.name="+member.name);
-    }
-
-    private void passByValue(int a, String b, MemberDTO member) {
-        // 기본자료형은 무조건 Pass by vlaue
-        a=20;
-        b="z";
-
-        String c="c";
-        // String c = new String("c"); 과 동일
-        c="z";
-        // c = new String("z"); 과 동일
-
-        //member = new MemberDTO("SungChoon");
-        // 참조자료형의 Pass by value
-        member.name = "BangHyun";
-        System.out.println("PassByValue method result !!!");
-        System.out.println("a="+a);
-        System.out.println("b="+b);
-        System.out.println("member.name="+member.name);
-    }
-
     private void makeStaticBlockObject() {
     	System.out.println("Creating block1");
     	StaticBlock block1 = new StaticBlock();
