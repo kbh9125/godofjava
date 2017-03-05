@@ -37,17 +37,6 @@ public class ReferenceTypes {
         reference.makeStaticBlockObject();
 
     }
-    
-    // 매개변수를 지정하는 특이한 방법
-    // private void calculateNumbers(int [] numbers) {
-    private void calculateNumbers(int ... numbers) {
-        int total = 0;
-        for(int number:numbers) {
-            total += number;
-        }
-        System.out.println("Total="+total);
-
-    }
 
     // 매개변수를 지정하는 특이한 방법
     // private void calculateNumbers(int [] numbers) {
