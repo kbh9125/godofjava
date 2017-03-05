@@ -7,6 +7,7 @@ package godofjava;
  */
 public class MemberDTO {
     public static String name ;
+    private String privateName ;
     public String phone ;
     public String email ;
 
@@ -17,7 +18,7 @@ public class MemberDTO {
     }
 
     // 이름만 알 때
-    public MemberDTO(String name) {
+    public MemberDTO(String privateName) {
         // this : 이 객체
         this.name = name ;
     }
@@ -46,4 +47,8 @@ public class MemberDTO {
         // System.out.println(name);
     }
 
+    public String getName() {
+        return privateName;
+    }
+    
 }
