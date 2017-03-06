@@ -50,4 +50,8 @@ public class MemberDTO {
     public String getName() {
         return privateName;
     }
+    
+    public String toString() {
+        return "Name=" + name + " Phone=" + phone + " eMail=" + email;
+    }
 }
