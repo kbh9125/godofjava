@@ -9,8 +9,13 @@ public class ManageStudent {
     public static void main(String [] args) {
         ManageStudent mgt = new ManageStudent();
         Student [] student = null;
+
+        System.out.println("Method addStduent & printStudents call...");
         student = mgt.addStudent();
         mgt.printStudents(student);
+
+        System.out.println("Method checkEquals call...");
+        mgt.checkEquals();
 
     }
 
@@ -26,6 +31,16 @@ public class ManageStudent {
         for (int loop=0 ; loop<=2 ; loop++) {
             System.out.println(student[loop].toString());
         }
+    }
 
+    public void checkEquals() {
+        Student a = new Student("Min","Seoul","01012345678","ask@godofjava.com");
+        Student b = new Student("Min","Seoul","01012345678","ask@godofjava.com");
+
+        if ( a.equals(b) ) {
+            System.out.println("Equal");
+        } else {
+            System.out.println("Not Equal");
+        }
     }
 }

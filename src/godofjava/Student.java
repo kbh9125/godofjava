@@ -26,4 +26,25 @@ public class Student {
         return name+" "+address+" "+phone+" "+email;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+
+        Student student = (Student) o;
+
+        if (name != null ? !name.equals(student.name) : student.name != null) return false;
+        if (address != null ? !address.equals(student.address) : student.address != null) return false;
+        if (phone != null ? !phone.equals(student.phone) : student.phone != null) return false;
+        return email != null ? email.equals(student.email) : student.email == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        return result;
+    }
 }

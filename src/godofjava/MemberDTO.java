@@ -1,5 +1,7 @@
 package godofjava;
 
+import java.io.OutputStream;
+
 /**
  * Create file : ${FILE_NAME}
  * Creator : KimBangHyun
@@ -53,5 +55,38 @@ public class MemberDTO {
     
     public String toString() {
         return "Name=" + name + " Phone=" + phone + " eMail=" + email;
+    }
+
+//    public boolean equals(Object obj) {
+//        if (this == obj) return true;
+//        if (this ==null) return false;
+//        if (getClass() != obj.getClass()) return false;
+//
+//        MemberDTO other = (MemberDTO) obj;
+//
+//        if (name == null) {
+//            if (other.name != null) return false;
+//        }
+
+    // equals() 메소드나 hashCode() 메소드
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MemberDTO)) return false;
+
+        MemberDTO memberDTO = (MemberDTO) o;
+
+        if (privateName != null ? !privateName.equals(memberDTO.privateName) : memberDTO.privateName != null)
+            return false;
+        if (phone != null ? !phone.equals(memberDTO.phone) : memberDTO.phone != null) return false;
+        return email != null ? email.equals(memberDTO.email) : memberDTO.email == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = privateName != null ? privateName.hashCode() : 0;
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        return result;
     }
 }
