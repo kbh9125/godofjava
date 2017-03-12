@@ -11,7 +11,8 @@ public abstract class MemberManagerAbstract {
     public abstract boolean addMember(MemberDTO member);
     public abstract boolean removeMember(String name, String phone);
     public abstract boolean updateMember(MemberDTO member);
-    public void printLog(String data) {
+    // 메소드를 final로 선언하면 더이상 overriding할 수 없다.
+    public final void printLog(String data) {
         System.out.println("Data="+data);
     }
 }

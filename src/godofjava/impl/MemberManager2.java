@@ -19,4 +19,9 @@ public class MemberManager2 extends MemberManagerAbstract {
     public boolean updateMember(MemberDTO member) {
         return false;
     }
+
+    // final 메소드를 변경하지 못하도록 final로 만들어주면 override할 수 없다.
+//    public final void printLog(String data) {
+//        System.out.println("Data="+data);
+//    }
 }
