@@ -7,9 +7,22 @@ public class ExceptionSample {
     public static void main(String[] args) {
         ExceptionSample sample = new ExceptionSample();
         sample.arrayOutOfBounds();
-        sample.finallySample();
-        sample.multiCatch();
-        sample.throwable();
+//        sample.finallySample();
+//        sample.multiCatch();
+//        sample.throwable();
+//        sample.throwException(13);
+        // throws 구문으로 선언되어 있는 메소드를 호출한 메소드에서 try-catch로 그 호출 부분을 감싸야 한다.
+//        try {
+//            sample.throwException2(13);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        sample.multiThrow();
+//        try {
+//            sample.throwException3(13);
+//        } catch (MyException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void arrayOutOfBounds() {
@@ -54,22 +67,46 @@ public class ExceptionSample {
         }
     }
 
+    // 모든 예외의 할아버지는 java.lang.Throwable 클래스이다.
     public void throwable() {
         int[] intArray = new int[5];
         try {
-            intArray = null;
+//            intArray = null;
             System.out.println(intArray[5]);
         } catch(Throwable t) {
-            System.out.println(t.getMessage());
+//            System.out.println(t.getMessage());
         }
     }
-    public void throwExeption(int number) {
+    public void throwException(int number) {
         try {
             if (number>12) {
                 throw new Exception("Number is over than 12");
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void throwException2(int number) throws Exception {
+       if (number>12) {
+           throw new Exception("Number is over than 12");
+       }
+    }
+
+    // 두개이상의 예외가 발생가능한 상황에서는 다음과 같이 throws에 두개이상의 예외를 나열하면 된다.
+    public void multiThrow() throws NullPointerException, ArrayIndexOutOfBoundsException {
+        int[] intArray = new int[5];
+        intArray=null;
+        System.out.println(intArray[5]);
+    }
+
+    public void throwException3(int number) throws MyException {
+        try {
+            if (number>12) {
+                throw new MyException("Nymber is over than 12 hahah!");
+            }
+        } catch (MyException e) {
             e.printStackTrace();
         }
     }
